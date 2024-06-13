@@ -1,7 +1,8 @@
 from frontend import views
 from resources.path import path
+from resources.include import include
 
-urls = {
-    path("/", "index", views.index, "GET"),
-    path("/login", "login", views.login, "GET"),
-}
+urls = [
+    path("/api", include("api/urls.py")),
+    path("/", include("frontend/urls.py")),
+]
