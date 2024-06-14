@@ -1,8 +1,10 @@
-from frontend import views
 from resources.path import path
 from resources.include import include
+from main.views import index
+
+# Define the URL patterns as "path("path", view, method)".
+# If you want to use the include() function, use "path("path", include("module.urls"))".
 
 urls = [
-    path("/api", include("api/urls.py")),
-    path("/", include("frontend/urls.py")),
+    path("/", "index", index, "GET")
 ]
